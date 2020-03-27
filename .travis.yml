@@ -27,7 +27,8 @@ script: cd ./build && make -j4 && cd -
 deploy:
   provider: releases
   api_key: $GITHUB_TOKEN
-  file: "nightly/OBS.dmg"
+  file_glob: true
+  file: nightly/*
   skip_cleanup: true
   on:
     repo: RickP/obs-studio
