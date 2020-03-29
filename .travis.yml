@@ -1,16 +1,5 @@
 language: cpp
 
-cache:
-  ccache: true
-
-env:
-  global:
-  # ccache
-  - USE_CCACHE=1
-  - CCACHE_COMPRESS=1
-  - CCACHE_MAXSIZE=200M
-  - CCACHE_CPP2=1
-
 matrix:
   include:
     - os: osx
