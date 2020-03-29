@@ -36,8 +36,11 @@ OBSProjector::OBSProjector(QWidget *widget, obs_source_t *source_, int monitor,
 		windowedProjectors.push_back(this);
 
 		setWindowFlags(Qt::FramelessWindowHint);
-		resize(config_get_int(GetGlobalConfig(), "Video", "OutputCX"),
-		       config_get_int(GetGlobalConfig(), "Video", "OutputCY"));
+
+		int cx = config_get_uint(main->Config(), "Video", "OutputCX");
+		int cy = config_get_uint(main->Config(), "Video", "OutputCY");
+
+		resize(cx, cy);
 	} else {
 		setWindowFlags(Qt::FramelessWindowHint |
 			       Qt::X11BypassWindowManagerHint);
@@ -148,8 +151,11 @@ OBSProjector::OBSProjector(QWidget *widget, obs_source_t *source_, int monitor,
 	show();
 
 	// We need it here to allow keyboard input in X11 to listen to Escape
-	if (!isWindow)
+	if (isWindow) {
+		lower();
+	} else {
 		activateWindow();
+	}
 }
 
 OBSProjector::~OBSProjector()
