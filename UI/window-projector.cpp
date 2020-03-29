@@ -37,8 +37,10 @@ OBSProjector::OBSProjector(QWidget *widget, obs_source_t *source_, int monitor,
 
 		setWindowFlags(Qt::FramelessWindowHint);
 
-		int cx = config_get_uint(GetGlobalConfig(), "Video", "OutputCX");
-		int cy = config_get_uint(GetGlobalConfig(), "Video", "OutputCY");
+		int cx =
+			config_get_uint(GetGlobalConfig(), "Video", "OutputCX");
+		int cy =
+			config_get_uint(GetGlobalConfig(), "Video", "OutputCY");
 
 		resize(cx, cy);
 	} else {
