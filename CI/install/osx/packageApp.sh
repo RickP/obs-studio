@@ -41,7 +41,8 @@ cp ../CI/install/osx/Info.plist ./OBS.app/Contents
 -x ./OBS.app/Contents/Plugins/obs-libfdk.so
 # -x ./OBS.app/Contents/Plugins/obs-outputs.so \
 
-/usr/local/Cellar/qt/5.10.1/bin/macdeployqt ./OBS.app
+ls -la /usr/local/Cellar/qt/
+macdeployqt ./OBS.app
 
 mv ./OBS.app/Contents/MacOS/libobs-opengl.so ./OBS.app/Contents/Frameworks
 
