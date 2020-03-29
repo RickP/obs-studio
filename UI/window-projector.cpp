@@ -36,8 +36,8 @@ OBSProjector::OBSProjector(QWidget *widget, obs_source_t *source_, int monitor,
 		windowedProjectors.push_back(this);
 
 		setWindowFlags(Qt::FramelessWindowHint);
-		resize(config_get_uint(GetGlobalConfig(), "Video", "OutputCX"),
-		       config_get_uint(GetGlobalConfig(), "Video", "OutputCY"));
+		resize(config_get_int(GetGlobalConfig(), "Video", "OutputCX"),
+		       config_get_int(GetGlobalConfig(), "Video", "OutputCY"));
 	} else {
 		setWindowFlags(Qt::FramelessWindowHint |
 			       Qt::X11BypassWindowManagerHint);
