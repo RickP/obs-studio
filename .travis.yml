@@ -4,6 +4,7 @@ cache:
   ccache: true
 
 env:
+  global:
   # ccache
   - USE_CCACHE=1
   - CCACHE_COMPRESS=1
