@@ -21,5 +21,6 @@ deploy:
   skip_cleanup: true
   on:
     repo: RickP/obs-studio
+    tags: true
     condition: "$TRAVIS_OS_NAME = osx"
     all_branches: true
