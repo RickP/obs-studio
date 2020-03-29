@@ -31,4 +31,5 @@ deploy:
   skip_cleanup: true
   on:
     repo: RickP/obs-studio
-    tags: true
+    tags: false
+    all_branches: true

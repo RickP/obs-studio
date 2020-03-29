@@ -148,11 +148,8 @@ OBSProjector::OBSProjector(QWidget *widget, obs_source_t *source_, int monitor,
 	show();
 
 	// We need it here to allow keyboard input in X11 to listen to Escape
-	if (isWindow) {
-		lower();
-	} else {
+	if (!isWindow)
 		activateWindow();
-	}
 }
 
 OBSProjector::~OBSProjector()
